@@ -1,0 +1,27 @@
+{
+  "name": "com.weipl.cordova_checkout",
+  "version": "1.0.0",
+  "description": "This is Worldline ePayments India Checkout plugin for Cordova based platoform",
+  "cordova": {
+    "id": "com.weipl.cordova_checkout",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/y-praveen/worldline-cordova-checkout.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "Praveen Yadav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/y-praveen/worldline-cordova-checkout/issues"
+  },
+  "homepage": "https://github.com/y-praveen/worldline-cordova-checkout#readme"
+}
