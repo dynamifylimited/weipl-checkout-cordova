@@ -7,7 +7,7 @@ This is official Cordova/Phonegap plugin wrapper to integrate Razorpay's Worldli
 - Android
 - iOS
 
-## Usage:
+## Usage
 
 Install the plugin
 
@@ -34,12 +34,13 @@ Here is a checkout initialisation code sample:
 ```js
 var options = {
 	"features": {
-		"showPGResponseMsg": true,
 		"enableAbortResponse": true,
-		"enableExpressPay": true
+		"enableExpressPay": true,
+		"enableInstrumentDeRegistration": true,
+		"enableMerTxnDetails": true
 	},
 	"consumerData": {
-		"deviceId": "WEBSH2",	//possible values "WEBSH1" or "WEBSH2"
+		"deviceId": "ANDROIDSH2",	//supported values "ANDROIDSH1" or "ANDROIDSH2" for Android and supported values "iOSSH1" or "iOSSH2" for iOS
 		"token": "007d9fc80400f43c2fe4cb3308db7ffd624c19559f6a6ac044fa4f34d10b1d7ffeee31b573f90f11e58f05cdf588de35ae7d4f9e78c1a30b4abc6c64fc026fad",
 		"paymentMode": "all",
 		"merchantLogoUrl": "https://www.paynimo.com/CompanyDocs/company-logo-vertical-light.png",  //provided merchant logo will be displayed
@@ -71,8 +72,9 @@ var errorCallback = function(error) {
 WLCheckout.open(options, paymentCallback, errorCallback);
 ```
 
-Change the options accordingly. Supported options can be found [here](https://www.paynimo.com/paynimocheckout/client/salt-based-documentation.htm).
+Change the **options** accordingly. All options for **[Android](https://www.paynimo.com/paynimocheckout/docs/?device=android)** and  **[iOS](https://www.paynimo.com/paynimocheckout/docs/?device=ios)** are available on respective links.
 
-## Note
 
-We don't support capacitor because of the app support dependency, for more details go through [this link](https://capacitor.ionicframework.com/docs/getting-started/dependencies#ios-development).
+### Response Handling
+
+Please refer detailed response handling & HASH match logic explaination for **[Android](https://www.paynimo.com/paynimocheckout/docs/?device=android)** and  **[iOS](https://www.paynimo.com/paynimocheckout/docs/?device=ios)** from given links.
