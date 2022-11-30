@@ -1,6 +1,6 @@
 {
   "name": "com.weipl.cordova_checkout",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "This is Worldline ePayments India Checkout plugin for Cordova based platoform",
   "cordova": {
     "id": "com.weipl.cordova_checkout",

@@ -1,6 +1,6 @@
 # Cordova/Phonegap plugin wrapper for Worldline ePayments India Mobile SDKs
 
-This is official Cordova/Phonegap plugin wrapper to integrate Razorpay's Worldline ePayments India Checkout.
+This is official Cordova/Phonegap plugin wrapper to integrate Worldline ePayments India Checkout.
 
 ## Supported platforms
 
