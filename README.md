@@ -6,6 +6,7 @@ This is official Cordova/Phonegap plugin wrapper to integrate Worldline ePayment
 
 - Android
 - iOS
+- Browser
 
 ## Usage
 
@@ -17,6 +18,7 @@ Install the plugin
 cd your-project-folder
 cordova platform add android      # to add Android platform 
 cordova platform add ios          # to add iOS platform
+cordova platform add browser      # to add browser platform
 cordova plugin add https://github.com/Worldline-ePayments-India/weipl-checkout-cordova.git --save
 ```
 (or, `phonegap plugin add https://github.com/Worldline-ePayments-India/weipl-checkout-cordova.git --save`)
@@ -24,6 +26,19 @@ cordova plugin add https://github.com/Worldline-ePayments-India/weipl-checkout-c
 **Note**:
 - Make sure that you set project target for **Frameworks, Libraries, and Embedded Content** option should be **Embed & Sign**. 
 - We support Xcode 12+ versions. 
+
+##### Steps to use updated plugin in project
+
+```bash
+# to check list of added plugins
+cordova plugin list
+
+# to remove existing plugin
+cordova plugin remove com.weipl.cordova_checkout
+
+# to add updated version of plugin
+cordova plugin add https://github.com/Worldline-ePayments-India/weipl-checkout-cordova.git --save
+```
 
 ## Integration code
 
@@ -34,13 +49,12 @@ Here is a checkout initialisation code sample:
 ```js
 var options = {
 	"features": {
-		"enableAbortResponse": true,
 		"enableExpressPay": true,
 		"enableInstrumentDeRegistration": true,
 		"enableMerTxnDetails": true
 	},
 	"consumerData": {
-		"deviceId": "ANDROIDSH2",	//supported values "ANDROIDSH1" or "ANDROIDSH2" for Android and supported values "iOSSH1" or "iOSSH2" for iOS
+		"deviceId": "ANDROIDSH2",	//supported values "ANDROIDSH1" or "ANDROIDSH2" for Android, supported values "iOSSH1" or "iOSSH2" for iOS and supported values "WEBSH1" or "WEBSH2" for Browser
 		"token": "007d9fc80400f43c2fe4cb3308db7ffd624c19559f6a6ac044fa4f34d10b1d7ffeee31b573f90f11e58f05cdf588de35ae7d4f9e78c1a30b4abc6c64fc026fad",
 		"paymentMode": "all",
 		"merchantLogoUrl": "https://www.paynimo.com/CompanyDocs/company-logo-vertical-light.png",  //provided merchant logo will be displayed
@@ -57,9 +71,9 @@ var options = {
 		}],
 		"customStyle": {
 			"PRIMARY_COLOR_CODE": "#45beaa",   //merchant primary color code
-			"SECONDARY_COLOR_CODE": "#FFFFFF",   //provide merchant"s suitable color code
-			"BUTTON_COLOR_CODE_1": "#2d8c8c",   //merchant"s button background color code
-			"BUTTON_COLOR_CODE_2": "#FFFFFF"   //provide merchant"s suitable color code for button text
+			"SECONDARY_COLOR_CODE": "#FFFFFF",   //provide merchant's suitable color code
+			"BUTTON_COLOR_CODE_1": "#2d8c8c",   //merchant's button background color code
+			"BUTTON_COLOR_CODE_2": "#FFFFFF"   //provide merchant's suitable color code for button text
 		}
 	}
 };
@@ -72,9 +86,9 @@ var errorCallback = function(error) {
 WLCheckout.open(options, paymentCallback, errorCallback);
 ```
 
-Change the **options** accordingly. All options for **[Android](https://www.paynimo.com/paynimocheckout/docs/?device=android)** and  **[iOS](https://www.paynimo.com/paynimocheckout/docs/?device=ios)** are available on respective links.
+Change the **options** accordingly. All options for **[Android](https://www.paynimo.com/paynimocheckout/docs/?device=android)**, **[iOS](https://www.paynimo.com/paynimocheckout/docs/?device=ios)** and **[Web](https://www.paynimo.com/paynimocheckout/docs/?device=web)** are available on respective links.
 
 
 ### Response Handling
 
-Please refer detailed response handling & HASH match logic explaination for **[Android](https://www.paynimo.com/paynimocheckout/docs/?device=android)** and  **[iOS](https://www.paynimo.com/paynimocheckout/docs/?device=ios)** from given links.
+Please refer detailed response handling & HASH match logic explaination for **[Android](https://www.paynimo.com/paynimocheckout/docs/?device=android)**, **[iOS](https://www.paynimo.com/paynimocheckout/docs/?device=ios)** and **[Web](https://www.paynimo.com/paynimocheckout/docs/?device=web)**.

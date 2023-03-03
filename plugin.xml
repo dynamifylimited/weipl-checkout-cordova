@@ -66,4 +66,16 @@
 		<framework src="CFNetwork.framework" />
 	</platform>
     
+	<!-- Browser -->
+	<platform name="browser">
+		<config-file target="config.xml" parent="/*">
+			<feature name="WEIPL_checkout">
+				<param name="browser-package" value="WEIPL_checkout" />
+			</feature>
+		</config-file>
+		<js-module src="src/browser/checkoutProxy.js" name="CheckoutProxy">
+		      <runs />
+		</js-module>  
+	</platform>
+
 </plugin>
