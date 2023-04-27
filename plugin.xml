@@ -61,7 +61,7 @@
 		<source-file src="src/ios/WEIPL_checkout.swift" />
 		
 		<!-- Framework files -->
-		<framework src="src/ios/weipl_checkout.framework" embed="true" custom="true" />
+		<framework src="src/ios/weipl_checkout.xcframework" embed="true" custom="true" />
 		<framework src="SystemConfiguration.framework" />
 		<framework src="CFNetwork.framework" />
 	</platform>
