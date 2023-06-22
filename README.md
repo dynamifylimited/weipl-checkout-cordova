@@ -40,6 +40,14 @@ cordova plugin remove com.weipl.cordova_checkout
 cordova plugin add https://github.com/Worldline-ePayments-India/weipl-checkout-cordova.git --save
 ```
 
+##### Declaration
+After plugin installation add entry of below details in **declaration.d.ts**. If this file is not available in your project then create file with declaration.d.ts name in **src** folder and add below code.
+```js
+declare module '*';
+
+declare var WLCheckout: any;
+```
+
 ## Integration code
 
 ### Checkout Initialisation
@@ -49,6 +57,7 @@ Here is a checkout initialisation code sample:
 ```js
 var options = {
 	"features": {
+		"enableAbortResponse": true,
 		"enableExpressPay": true,
 		"enableInstrumentDeRegistration": true,
 		"enableMerTxnDetails": true
