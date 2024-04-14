@@ -10,9 +10,9 @@ import weipl_checkout
   @objc(pluginInitialize)
   override func pluginInitialize() {
     DispatchQueue.global().async {
-          self.WLCheckout = WLCheckoutViewController()
-          self.WLCheckout?.preloadData()
-      }
+      self.WLCheckout = WLCheckoutViewController()
+      self.WLCheckout?.preloadData()
+    }
   }
 
   @objc(open:)
